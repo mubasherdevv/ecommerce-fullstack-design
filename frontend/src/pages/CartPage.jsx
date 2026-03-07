@@ -69,17 +69,19 @@ export default function CartPage() {
 
           {/* Items */}
           {items.map(item => {
-            const itemPrice = item.discount
-              ? item.price * (1 - item.discount / 100)
-              : item.price;
+            const itemPrice = item.price;
             const subtotal = itemPrice * item.quantity;
+            
+            const discountDisplay = item.originalPrice && item.originalPrice > item.price 
+              ? Math.round(((item.originalPrice - item.price) / item.originalPrice) * 100)
+              : 0;
 
             return (
-              <div key={item.id} className="bg-white border border-gray-100 rounded-2xl p-4 md:p-5 shadow-sm">
+              <div key={item._id} className="bg-white border border-gray-100 rounded-2xl p-4 md:p-5 shadow-sm">
                 <div className="grid md:grid-cols-5 gap-4 items-center">
                   {/* Product info */}
                   <div className="flex items-center gap-4 md:col-span-2">
-                    <Link to={`/products/${item.id}`} className="flex-shrink-0">
+                    <Link to={`/products/${item._id}`} className="flex-shrink-0">
                       <img
                         src={item.image}
                         alt={item.name}
@@ -87,14 +89,14 @@ export default function CartPage() {
                       />
                     </Link>
                     <div className="min-w-0">
-                      <Link to={`/products/${item.id}`}>
+                      <Link to={`/products/${item._id}`}>
                         <h3 className="font-semibold text-dark text-sm leading-tight hover:text-primary transition-colors line-clamp-2 mb-1">
                           {item.name}
                         </h3>
                       </Link>
                       <span className="text-xs text-gray-medium">{item.category}</span>
-                      {item.discount > 0 && (
-                        <span className="ml-2 text-xs font-bold text-primary">-{item.discount}%</span>
+                      {discountDisplay > 0 && (
+                        <span className="ml-2 text-xs font-bold text-primary">-{discountDisplay}%</span>
                       )}
                     </div>
                   </div>
@@ -103,8 +105,8 @@ export default function CartPage() {
                   <div className="md:text-center">
                     <span className="text-xs text-gray-medium md:hidden mr-2">Price:</span>
                     <span className="font-semibold text-dark">${itemPrice.toFixed(2)}</span>
-                    {item.discount > 0 && (
-                      <span className="ml-1 text-xs text-gray-medium line-through">${item.price.toFixed(2)}</span>
+                    {discountDisplay > 0 && (
+                      <span className="ml-1 text-xs text-gray-medium line-through">${item.originalPrice.toFixed(2)}</span>
                     )}
                   </div>
 
@@ -112,7 +114,7 @@ export default function CartPage() {
                   <div className="flex items-center md:justify-center">
                     <div className="inline-flex items-center border-2 border-gray-200 rounded-xl overflow-hidden">
                       <button
-                        onClick={() => updateQuantity(item.id, item.quantity - 1)}
+                        onClick={() => updateQuantity(item._id, item.quantity - 1)}
                         className="px-3 py-2 text-sm font-bold hover:bg-gray-light transition-colors"
                         disabled={item.quantity <= 1}
                       >
@@ -120,8 +122,9 @@ export default function CartPage() {
                       </button>
                       <span className="px-3 py-2 text-sm font-semibold min-w-[2.5rem] text-center">{item.quantity}</span>
                       <button
-                        onClick={() => updateQuantity(item.id, item.quantity + 1)}
+                        onClick={() => updateQuantity(item._id, item.quantity + 1)}
                         className="px-3 py-2 text-sm font-bold hover:bg-primary hover:text-white transition-colors"
+                        disabled={item.quantity >= item.countInStock}
                       >
                         +
                       </button>
@@ -132,7 +135,7 @@ export default function CartPage() {
                   <div className="flex items-center justify-between md:justify-end gap-3">
                     <span className="font-bold text-dark">${subtotal.toFixed(2)}</span>
                     <button
-                      onClick={() => removeFromCart(item.id)}
+                      onClick={() => removeFromCart(item._id)}
                       className="p-2 text-gray-medium hover:text-red-500 hover:bg-red-50 rounded-lg transition-all duration-200"
                       aria-label="Remove item"
                     >
