@@ -1,4 +1,4 @@
-# Exclusive — E-Commerce Platform
+# Exclusive — FullStack E-Commerce Store 
 
 <div align="center">
 
@@ -172,12 +172,12 @@ NODE_ENV=development
 | Role | Email | Password |
 |------|-------|----------|
 | Admin | admin@example.com | password123 |
-| User | john@example.com | password123 |
+| User | self | self  |
 
 ---
 
 <div align="center">
 
-**Built with ❤️ using MERN Stack**
+**Developed By Mubasher**
 
 </div>
