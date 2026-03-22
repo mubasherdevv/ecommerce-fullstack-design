@@ -96,24 +96,38 @@
   </tr>
 </table>
 
+
 ---
+
 ## 📁 Project Structure
- 
+
 ```
 ecomm/
-├── backend/               # Express.js REST API
-│   ├── controllers/       # Business logic (products, orders, users, categories)
-│   ├── models/            # Mongoose schemas (User, Product, Order, Category)
-│   ├── routes/            # API route definitions
-│   ├── middleware/        # JWT auth & admin authorization
-│   └── server.js          # Entry point
+├── backend/
+│   ├── config/db.js           # MongoDB connection
+│   ├── controllers/           # API controllers
+│   ├── middleware/            # Auth middleware
+│   ├── models/               # Mongoose schemas
+│   ├── routes/               # API routes
+│   ├── utils/                # Utilities
+│   ├── seeder.js             # Database seeder
+│   └── server.js             # Entry point
 │
-└── frontend/              # React + Vite Application
-    └── src/
-        ├── pages/         # All page components (Home, Cart, Admin, etc.)
-        ├── components/    # Reusable UI components (Navbar, ProductCard, etc.)
-        └── context/       # Global state (Auth, Cart, Products)
+├── frontend/
+│   ├── src/
+│   │   ├── components/       # UI components
+│   │   ├── context/           # React Context
+│   │   ├── pages/            # Page components
+│   │   ├── App.jsx
+│   │   └── main.jsx
+│   └── vite.config.js
+│
+└── assets/                    # Screenshots
+    ├── desktop/
+    ├── admin/
+    └── mobile/
 ```
+
  
 ---
 ## 🚀 Quick Start
