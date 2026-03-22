@@ -21,17 +21,17 @@ A modern full-stack e-commerce web app built with the **MERN Stack** (MongoDB, E
 
 | Dashboard | Products | Product Detail |
 |:---------:|:--------:|:--------------:|
-| ![Admin Dashboard](asstes/desktop/admin.png) | ![Products](asstes/desktop/admin-product.png) | ![Product Detail](asstes/desktop/productdetail-page.png) |
+| ![Admin Dashboard](desktop/admin.png) | ![Products](desktop/admin-product.png) | ![Product Detail](desktop/productdetail-page.png) |
 
 | Admin Categories | Login | Register |
 |:---------------:|:-----:|:--------:|
-| ![Categories](asstes/desktop/admin-category.png) | ![Login](asstes/desktop/login.png) | ![Register](asstes/desktop/register.png) |
+| ![Categories](desktop/admin-category.png) | ![Login](desktop/login.png) | ![Register](desktop/register.png) |
 
 ### Mobile
 
 | Home | Products | Login |
 |:----:|:--------:|:-----:|
-| ![Home](asstes/mobile/home.gif) | ![Products](asstes/mobile/product.png) | ![Login](asstes/mobile/login.png) |
+| ![Home](mobile/home.gif) | ![Products](mobile/product.png) | ![Login](mobile/login.png) |
 
 ---
 
