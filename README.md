@@ -36,7 +36,7 @@
   <tr>
     <td><img src="assets/desktop/home.gif" width="100%"/></td>
     <td><img src="assets/desktop/product-page.png" width="100%"/></td>
-    <td><img src="assets/desktop/product detail.png" width="100%"/></td>
+    <td><img src="assets/desktop/productdetail.png" width="100%"/></td>
   </tr>
   <tr>
     <td align="center"><b>Cart</b></td>
@@ -68,8 +68,8 @@
     <td align="center"><b>Orders</b></td>
   </tr>
   <tr>
-    <td><img src="assets/admin/Category Page.png" width="100%"/></td>
-    <td><img src="assets/admin/Order Page.png" width="100%"/></td>
+    <td><img src="assets/admin/CategoryPage.png" width="100%"/></td>
+    <td><img src="assets/admin/OrderPage.png" width="100%"/></td>
   </tr>
 </table>
 
