@@ -19,7 +19,7 @@
 | Frontend | React 19, Vite, Tailwind CSS, React Router DOM |
 | Backend | Node.js, Express.js, MongoDB, Mongoose |
 | Auth | JWT, bcryptjs |
-| UI | Heroicons, Recharts, Axios |
+
 
 ---
 
@@ -97,7 +97,25 @@
 </table>
 
 ---
-
+## 📁 Project Structure
+ 
+```
+ecomm/
+├── backend/               # Express.js REST API
+│   ├── controllers/       # Business logic (products, orders, users, categories)
+│   ├── models/            # Mongoose schemas (User, Product, Order, Category)
+│   ├── routes/            # API route definitions
+│   ├── middleware/        # JWT auth & admin authorization
+│   └── server.js          # Entry point
+│
+└── frontend/              # React + Vite Application
+    └── src/
+        ├── pages/         # All page components (Home, Cart, Admin, etc.)
+        ├── components/    # Reusable UI components (Navbar, ProductCard, etc.)
+        └── context/       # Global state (Auth, Cart, Products)
+```
+ 
+---
 ## 🚀 Quick Start
 
 ```bash
